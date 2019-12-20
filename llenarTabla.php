@@ -95,8 +95,6 @@ $_SESSION['valor_m'] = $valor_m;
 $objeto_impresion = new imprimirTabla();
 
 
-//echo header("Location: iteracion1.php");
-
 ?>
 <html>
     <head>

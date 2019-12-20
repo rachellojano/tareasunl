@@ -1,6 +1,5 @@
 <?php
-//include_once 'objetos/restriccion.php';
-//include_once 'objetos/variable.php';
+
 
 class imprimirTabla {
     function imprimirTablaSolucion($tabla, $iteracion, $Zj, $CjmZj){
@@ -117,7 +116,6 @@ class imprimirTabla {
         for($i = 0; $i<count($restricciones); $i++){
             $html_restricciones .= "<tr>";
             for($j = 0; $j<count($restricciones[$i]->variables); $j++){
-                //var_dump (count($restricciones[$i]->variables)); break;
                 if(!$original){          
                     if($restricciones[$i]->variables[$j]->coeficiente > 0 && $j==0){
                 $html_restricciones .= 
@@ -196,35 +194,5 @@ class imprimirTabla {
         return $html_restricciones."</table>";
     }
     
-    function imprimirTablaHungaro ($matriz, $tipo){
-        $html_hungaro = "<table class='table table-striped' border='1'><tbody>";
-        
-        for($i = 0; $i<count($matriz); $i++){
-            $html_hungaro.= "<tr>";
-            for($j = 0; $j<count($matriz[0]); $j++){
-                switch ($tipo){
-                    case "num":
-                        $html_hungaro .= "<td>".$matriz[$i][$j]->num."</td>";
-                    break;
-                    
-                    case "lineas":
-                        if($matriz[$i][$j]->linea)
-                            $html_hungaro .= "<td>1</td>";
-                        else
-                            $html_hungaro .= "<td>0</td>";
-                    break;
-                
-                    case "intersecciones":
-                        if($matriz[$i][$j]->interseccion)
-                            $html_hungaro .= "<td>1</td>";
-                        else
-                            $html_hungaro .= "<td>0</td>";
-                    break;
-                }
-            }
-            $html_hungaro.= "</tr>";
-        }
-        
-        return $html_hungaro."<tbody></table>";
-    }
+  
 }
